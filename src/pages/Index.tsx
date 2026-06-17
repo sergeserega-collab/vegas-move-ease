@@ -7,7 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { toast } from "@/hooks/use-toast";
 import {
-  Truck, Boxes, Building2, Warehouse, Sparkles, ShieldCheck,
+  Truck, Boxes, Building2, Home, Sparkles, ShieldCheck,
   Phone, Mail, MapPin, Star, Clock, Award, CheckCircle2, ArrowRight, Menu, X,
 } from "lucide-react";
 import heroImg from "@/assets/hero-truck.jpg";
@@ -20,7 +20,7 @@ const services = [
   { icon: Truck, title: "Local Moves", desc: "Same-day and scheduled moves anywhere in the Vegas Valley." },
   { icon: Building2, title: "Apartment & Condo", desc: "High-rise specialists — elevator scheduling and tight turns handled." },
   { icon: Boxes, title: "Packing Services", desc: "Full or partial packing with quality materials and care." },
-  { icon: Warehouse, title: "Storage Solutions", desc: "Climate-controlled short and long-term storage." },
+  { icon: Home, title: "Full Service Moves", desc: "Packing, moving, and unpacking — we handle everything from start to finish." },
   { icon: Sparkles, title: "Office Relocation", desc: "After-hours commercial moves to keep your business running." },
   { icon: ShieldCheck, title: "Long Distance", desc: "Licensed interstate moves with transparent flat-rate pricing." },
 ];
