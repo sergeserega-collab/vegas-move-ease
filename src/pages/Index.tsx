@@ -214,31 +214,31 @@ export default function Index() {
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="name">Full name</Label>
-                  <Input id="name" required placeholder="Jane Doe" />
+                  <Input id="name" name="name" required placeholder="Jane Doe" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone</Label>
-                  <Input id="phone" type="tel" required placeholder="(702) 555-0123" />
+                  <Input id="phone" name="phone" type="tel" required placeholder="(702) 555-0123" />
                 </div>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" required placeholder="you@email.com" />
+                <Input id="email" name="email" type="email" required placeholder="you@email.com" />
               </div>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="from">Moving from</Label>
-                  <Input id="from" required placeholder="ZIP or neighborhood" />
+                  <Input id="from" name="from" required placeholder="ZIP or neighborhood" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="to">Moving to</Label>
-                  <Input id="to" required placeholder="ZIP or neighborhood" />
+                  <Input id="to" name="to" required placeholder="ZIP or neighborhood" />
                 </div>
               </div>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="size">Home size</Label>
-                  <Select>
+                  <Select value={size} onValueChange={setSize}>
                     <SelectTrigger id="size"><SelectValue placeholder="Select size" /></SelectTrigger>
                     <SelectContent>
                       <SelectItem value="studio">Studio</SelectItem>
@@ -252,12 +252,12 @@ export default function Index() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="date">Move date</Label>
-                  <Input id="date" type="date" required />
+                  <Input id="date" name="date" type="date" required />
                 </div>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="notes">Anything else?</Label>
-                <Textarea id="notes" rows={3} placeholder="Stairs, elevator, piano, etc." />
+                <Textarea id="notes" name="notes" rows={3} placeholder="Stairs, elevator, piano, etc." />
               </div>
               <Button type="submit" disabled={submitting} className="w-full h-12 bg-gradient-sunset hover:opacity-90 text-primary-foreground font-semibold text-base shadow-glow">
                 {submitting ? "Sending…" : "Request My Quote"}
