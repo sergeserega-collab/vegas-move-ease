@@ -125,10 +125,6 @@ export default function Index() {
           />
           <div className="absolute inset-0 bg-gradient-hero" style={{ background: "linear-gradient(180deg, hsl(220 60% 8% / 0.35) 0%, hsl(220 60% 8% / 0.9) 100%)" }} />
           <div className="container relative z-10 py-24 md:py-32 max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-primary/40 backdrop-blur px-4 py-1.5 mb-6">
-              <Star className="h-3.5 w-3.5 fill-accent text-accent" />
-              <span className="text-xs font-semibold tracking-wide text-primary-foreground uppercase">5.0 ★ — 800+ Valley Moves</span>
-            </div>
             <h1 className="font-display text-5xl sm:text-6xl md:text-7xl uppercase text-primary-foreground leading-[0.95] text-balance">
               Moving day,<br />
               <span className="bg-gradient-sunset bg-clip-text text-transparent">done right.</span>
