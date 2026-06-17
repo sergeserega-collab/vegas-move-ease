@@ -127,7 +127,7 @@ export default function Index() {
           <div className="container relative z-10 py-24 md:py-32 max-w-3xl">
             <h1 className="font-display text-5xl sm:text-6xl md:text-7xl uppercase text-primary-foreground leading-[0.95] text-balance">
               Moving day,<br />
-              <span className="bg-gradient-sunset bg-clip-text text-transparent">done right.</span>
+              <span>done right.</span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-primary-foreground/85 max-w-xl">
               Licensed, insured, and built for Las Vegas. Get an honest flat-rate quote in minutes — no upsells, no surprises.
