@@ -14,7 +14,7 @@ import heroImg from "@/assets/hero-truck.jpg";
 
 const PHONE = "(702) 555-0188";
 const PHONE_TEL = "+17025550188";
-const EMAIL = "quotes@lasvegasvalleymovers.com";
+const EMAIL = "graycollarmoving@gmail.com";
 
 const services = [
   { icon: Truck, title: "Local Moves", desc: "Same-day and scheduled moves anywhere in Las Vegas." },
@@ -49,18 +49,34 @@ const faqs = [
 export default function Index() {
   const [open, setOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [size, setSize] = useState("");
 
-  const handleQuote = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleQuote = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      (e.target as HTMLFormElement).reset();
+    try {
+      const form = e.currentTarget;
+      const formData = new FormData(form);
+      formData.set("size", size);
+      await fetch("https://formsubmit.co/ajax/graycollarmoving@gmail.com", {
+        method: "POST",
+        body: formData,
+      });
+      form.reset();
+      setSize("");
       toast({
         title: "Quote request received",
         description: "We'll call you within one business hour with your estimate.",
       });
-    }, 700);
+    } catch {
+      toast({
+        title: "Something went wrong",
+        description: "Please call us directly and we'll help you right away.",
+        variant: "destructive",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const navLinks = [
@@ -198,31 +214,31 @@ export default function Index() {
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="name">Full name</Label>
-                  <Input id="name" required placeholder="Jane Doe" />
+                  <Input id="name" name="name" required placeholder="Jane Doe" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone</Label>
-                  <Input id="phone" type="tel" required placeholder="(702) 555-0123" />
+                  <Input id="phone" name="phone" type="tel" required placeholder="(702) 555-0123" />
                 </div>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" required placeholder="you@email.com" />
+                <Input id="email" name="email" type="email" required placeholder="you@email.com" />
               </div>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="from">Moving from</Label>
-                  <Input id="from" required placeholder="ZIP or neighborhood" />
+                  <Input id="from" name="from" required placeholder="ZIP or neighborhood" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="to">Moving to</Label>
-                  <Input id="to" required placeholder="ZIP or neighborhood" />
+                  <Input id="to" name="to" required placeholder="ZIP or neighborhood" />
                 </div>
               </div>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="size">Home size</Label>
-                  <Select>
+                  <Select value={size} onValueChange={setSize}>
                     <SelectTrigger id="size"><SelectValue placeholder="Select size" /></SelectTrigger>
                     <SelectContent>
                       <SelectItem value="studio">Studio</SelectItem>
@@ -236,12 +252,12 @@ export default function Index() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="date">Move date</Label>
-                  <Input id="date" type="date" required />
+                  <Input id="date" name="date" type="date" required />
                 </div>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="notes">Anything else?</Label>
-                <Textarea id="notes" rows={3} placeholder="Stairs, elevator, piano, etc." />
+                <Textarea id="notes" name="notes" rows={3} placeholder="Stairs, elevator, piano, etc." />
               </div>
               <Button type="submit" disabled={submitting} className="w-full h-12 bg-gradient-sunset hover:opacity-90 text-primary-foreground font-semibold text-base shadow-glow">
                 {submitting ? "Sending…" : "Request My Quote"}
