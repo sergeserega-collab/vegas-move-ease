@@ -14,7 +14,7 @@ import heroImg from "@/assets/hero-truck.jpg";
 
 const PHONE = "(702) 555-0188";
 const PHONE_TEL = "+17025550188";
-const EMAIL = "quotes@lasvegasvalleymovers.com";
+const EMAIL = "graycollarmoving@gmail.com";
 
 const services = [
   { icon: Truck, title: "Local Moves", desc: "Same-day and scheduled moves anywhere in Las Vegas." },
