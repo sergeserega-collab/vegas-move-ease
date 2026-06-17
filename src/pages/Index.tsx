@@ -49,18 +49,34 @@ const faqs = [
 export default function Index() {
   const [open, setOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [size, setSize] = useState("");
 
-  const handleQuote = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleQuote = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      (e.target as HTMLFormElement).reset();
+    try {
+      const form = e.currentTarget;
+      const formData = new FormData(form);
+      formData.set("size", size);
+      await fetch("https://formsubmit.co/ajax/graycollarmoving@gmail.com", {
+        method: "POST",
+        body: formData,
+      });
+      form.reset();
+      setSize("");
       toast({
         title: "Quote request received",
         description: "We'll call you within one business hour with your estimate.",
       });
-    }, 700);
+    } catch {
+      toast({
+        title: "Something went wrong",
+        description: "Please call us directly and we'll help you right away.",
+        variant: "destructive",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const navLinks = [
