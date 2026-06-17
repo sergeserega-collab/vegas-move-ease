@@ -14,10 +14,10 @@ import heroImg from "@/assets/hero-truck.jpg";
 
 const PHONE = "(702) 555-0188";
 const PHONE_TEL = "+17025550188";
-const EMAIL = "quotes@vegasvalleymovers.com";
+const EMAIL = "quotes@lasvegasvalleymovers.com";
 
 const services = [
-  { icon: Truck, title: "Local Moves", desc: "Same-day and scheduled moves anywhere in the Vegas Valley." },
+  { icon: Truck, title: "Local Moves", desc: "Same-day and scheduled moves anywhere in Las Vegas." },
   { icon: Building2, title: "Apartment & Condo", desc: "High-rise specialists — elevator scheduling and tight turns handled." },
   { icon: Boxes, title: "Packing Services", desc: "Full or partial packing with quality materials and care." },
   { icon: Home, title: "Full Service Moves", desc: "Packing, moving, and unpacking — we handle everything from start to finish." },
@@ -78,7 +78,7 @@ export default function Index() {
               <Truck className="h-5 w-5 text-primary-foreground" />
             </div>
             <div className="leading-tight">
-              <div className="font-display text-lg uppercase tracking-wide">Vegas Valley</div>
+              <div className="font-display text-lg uppercase tracking-wide">Las Vegas</div>
               <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground -mt-1">Movers</div>
             </div>
           </a>
@@ -118,7 +118,7 @@ export default function Index() {
         <section className="relative min-h-[88vh] flex items-center overflow-hidden">
           <img
             src={heroImg}
-            alt="Vegas Valley Movers truck on the Las Vegas Strip at sunset"
+            alt="Las Vegas Movers truck on the Las Vegas Strip at sunset"
             width={1920}
             height={1080}
             className="absolute inset-0 h-full w-full object-cover"
@@ -134,7 +134,7 @@ export default function Index() {
               <span className="bg-gradient-sunset bg-clip-text text-transparent">done right.</span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-primary-foreground/85 max-w-xl">
-              Licensed, insured, and built for the Vegas Valley. Get an honest flat-rate quote in minutes — no upsells, no surprises.
+              Licensed, insured, and built for Las Vegas. Get an honest flat-rate quote in minutes — no upsells, no surprises.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="bg-gradient-sunset hover:opacity-90 text-primary-foreground font-semibold h-14 px-8 text-base shadow-glow">
@@ -261,7 +261,7 @@ export default function Index() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="text-xs uppercase tracking-[0.25em] text-accent font-semibold mb-3">Service areas</div>
-                <h2 className="font-display text-4xl md:text-5xl uppercase text-balance">We cover the entire Vegas Valley.</h2>
+                <h2 className="font-display text-4xl md:text-5xl uppercase text-balance">We cover all of Las Vegas.</h2>
                 <p className="mt-4 text-muted-foreground text-lg">Locally owned and operated since day one. If you're moving within Clark County, we've got you.</p>
                 <Button asChild variant="outline" className="mt-6 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                   <a href="#quote">Check My Address <ArrowRight className="ml-2 h-4 w-4" /></a>
@@ -348,7 +348,7 @@ export default function Index() {
 
       <footer className="border-t border-border py-8">
         <div className="container flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-muted-foreground">
-          <div>© {new Date().getFullYear()} Vegas Valley Movers · NV Lic. #00000000</div>
+          <div>© {new Date().getFullYear()} Las Vegas Movers · NV Lic. #00000000</div>
           <div>Built with care in Las Vegas, NV</div>
         </div>
       </footer>
