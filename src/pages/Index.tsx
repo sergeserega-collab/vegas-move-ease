@@ -14,7 +14,7 @@ import heroImg from "@/assets/hero-truck.jpg";
 
 const PHONE = "702-714-7560";
 const PHONE_TEL = "+17027147560";
-const EMAIL = "info@graycollarmoving.com";
+const EMAIL = "graycollarmoving@gmail.com";
 
 const services = [
   { icon: Truck, title: "Local Moves", desc: "Same-day and scheduled moves anywhere in Las Vegas." },
@@ -57,7 +57,7 @@ export default function Index() {
       const form = e.currentTarget;
       const formData = new FormData(form);
       formData.set("size", size);
-      await fetch("https://formsubmit.co/ajax/info@graycollarmoving.com", {
+      await fetch("https://formsubmit.co/ajax/graycollarmoving@gmail.com", {
         method: "POST",
         body: formData,
       });
@@ -154,9 +154,8 @@ export default function Index() {
                 <a href={`tel:${PHONE_TEL}`}><Phone className="mr-2 h-4 w-4" />{PHONE}</a>
               </Button>
             </div>
-            <div className="mt-10 grid grid-cols-3 gap-6 max-w-md">
+            <div className="mt-10 grid grid-cols-2 gap-6 max-w-md">
               {[
-                [Award, "Licensed & Insured"],
                 [Clock, "On-Time Promise"],
                 [ShieldCheck, "No Hidden Fees"],
               ].map(([Icon, label], i) => (
