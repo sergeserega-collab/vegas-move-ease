@@ -144,7 +144,7 @@ export default function Index() {
               <span>done right.</span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-primary-foreground/85 max-w-xl">
-              Friendly movers, built for Las Vegas. Get an honest flat-rate quote in minutes — no upsells, no surprises.
+              Friendly movers, built for Las Vegas. Transparent pricing — no upsells, no surprises.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="bg-gradient-sunset hover:opacity-90 text-primary-foreground font-semibold h-14 px-8 text-base shadow-glow">
