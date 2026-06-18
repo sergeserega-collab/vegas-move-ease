@@ -12,9 +12,9 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/hero-truck.jpg";
 
-const PHONE = "(702) 555-0188";
-const PHONE_TEL = "+17025550188";
-const EMAIL = "graycollarmoving@gmail.com";
+const PHONE = "702-714-7560";
+const PHONE_TEL = "+17027147560";
+const EMAIL = "info@graycollarmoving.com";
 
 const services = [
   { icon: Truck, title: "Local Moves", desc: "Same-day and scheduled moves anywhere in Las Vegas." },
@@ -40,10 +40,9 @@ const reviews = [
 
 const faqs = [
   { q: "How quickly can you schedule my move?", a: "We can often accommodate next-day moves and even same-day in some cases. Weekends book out 1–2 weeks in advance." },
-  { q: "Are you licensed and insured?", a: "Yes — we're fully licensed in Nevada and carry full cargo and liability insurance on every job." },
   { q: "Do you charge by the hour or flat-rate?", a: "Local moves are typically hourly with a two-hour minimum. Long-distance moves are quoted as transparent flat rates." },
   { q: "What's not included in a standard quote?", a: "Disconnecting appliances with gas lines, hoisting items over balconies, and specialty items like pianos or safes require an add-on quote." },
-  { q: "Do you provide boxes and packing materials?", a: "Yes. We sell new boxes, paper, tape, and wardrobe boxes, or you can add full packing service to your move." },
+  { q: "Do you provide boxes and packing materials?", a: "Yes. Plastic wrap, blankets, paper, tape, wardrobe boxes are included in the hourly rate. We sell new boxes." },
 ];
 
 export default function Index() {
@@ -58,7 +57,7 @@ export default function Index() {
       const form = e.currentTarget;
       const formData = new FormData(form);
       formData.set("size", size);
-      await fetch("https://formsubmit.co/ajax/graycollarmoving@gmail.com", {
+      await fetch("https://formsubmit.co/ajax/info@graycollarmoving.com", {
         method: "POST",
         body: formData,
       });
@@ -94,8 +93,7 @@ export default function Index() {
               <Truck className="h-5 w-5 text-primary-foreground" />
             </div>
             <div className="leading-tight">
-              <div className="font-display text-lg uppercase tracking-wide">Las Vegas</div>
-              <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground -mt-1">Movers</div>
+              <div className="font-display text-lg uppercase tracking-wide">GC Moving</div>
             </div>
           </a>
           <nav className="hidden md:flex items-center gap-7">
@@ -146,7 +144,7 @@ export default function Index() {
               <span>done right.</span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-primary-foreground/85 max-w-xl">
-              Licensed, insured, and built for Las Vegas. Get an honest flat-rate quote in minutes — no upsells, no surprises.
+              Friendly movers, built for Las Vegas. Get an honest flat-rate quote in minutes — no upsells, no surprises.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="bg-gradient-sunset hover:opacity-90 text-primary-foreground font-semibold h-14 px-8 text-base shadow-glow">
@@ -202,7 +200,7 @@ export default function Index() {
               <h2 className="font-display text-4xl md:text-5xl uppercase text-balance">Get an honest estimate in minutes.</h2>
               <p className="mt-4 text-primary-foreground/75 text-lg">Fill out the form and we'll call you within one business hour with a flat-rate quote — no obligation, no spam.</p>
               <ul className="mt-8 space-y-3">
-                {["No-cost in-home or virtual walkthrough", "Transparent flat-rate pricing", "Fully licensed & insured crew"].map(t => (
+                {["No-cost in-home or virtual walkthrough", "Transparent flat-rate pricing"].map(t => (
                   <li key={t} className="flex items-center gap-3 text-primary-foreground/90">
                     <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0" />
                     <span>{t}</span>
@@ -339,13 +337,12 @@ export default function Index() {
             <div className="md:col-span-1">
               <div className="text-xs uppercase tracking-[0.25em] text-accent font-semibold mb-3">Contact</div>
               <h2 className="font-display text-4xl uppercase text-balance">Talk to a real human.</h2>
-              <p className="mt-4 text-primary-foreground/75">Office hours Mon–Sat, 7am–7pm PT. After-hours quotes by email.</p>
+              <p className="mt-4 text-primary-foreground/75">Office hours Mon–Sun, 9am–7pm PT. After-hours quotes by email.</p>
             </div>
-            <div className="md:col-span-2 grid sm:grid-cols-3 gap-5">
+            <div className="md:col-span-2 grid sm:grid-cols-2 gap-5">
               {[
                 { icon: Phone, label: "Call", value: PHONE, href: `tel:${PHONE_TEL}` },
                 { icon: Mail, label: "Email", value: EMAIL, href: `mailto:${EMAIL}` },
-                { icon: MapPin, label: "Office", value: "3500 Sunset Rd\nLas Vegas, NV 89120", href: "#" },
               ].map(({ icon: Icon, label, value, href }) => (
                 <a key={label} href={href} className="p-6 rounded-xl bg-primary-foreground/5 border border-primary-foreground/10 hover:border-accent/50 transition-smooth block">
                   <Icon className="h-5 w-5 text-accent mb-4" />
@@ -360,7 +357,7 @@ export default function Index() {
 
       <footer className="border-t border-border py-8">
         <div className="container flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-muted-foreground">
-          <div>© {new Date().getFullYear()} Las Vegas Movers · NV Lic. #00000000</div>
+          <div>© {new Date().getFullYear()} GC Moving · NV Lic. #00000000</div>
           <div>Built with care in Las Vegas, NV</div>
         </div>
       </footer>
